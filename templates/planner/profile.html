@@ -1,21 +1,17 @@
 {% extends 'planner/base.html' %}
-<<<<<<< HEAD
+
 {% block title %}Profile - PeakPrep{% endblock %}
-=======
-{% block title %}Profile - PW Study{% endblock %}
->>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
+
 {% block header_title %}My Profile{% endblock %}
 {% block header_subtitle %}Your account information and stats.{% endblock %}
 
 {% block content %}
 <div style="display: grid; grid-template-columns: 340px 1fr; gap: 22px; max-width: 900px; margin: 0 auto;">
 
-    <!-- Left: Profile Card -->
     <div class="card" style="text-align:center;">
         <div class="profile-hero">
-<<<<<<< HEAD
             {% if profile.avatar %}
-                <img src="{{ profile.avatar.url }}" alt="Avatar">
+                <img src="{{ profile.avatar.url }}" alt="Avatar" style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
             {% else %}
                 <img src="https://ui-avatars.com/api/?name={{ user.username }}&background=eb3636&color=fff&size=120"
                      alt="Avatar">
@@ -23,6 +19,7 @@
             <h2>{{ user.username }}</h2>
             <p>{{ user.email|default:"No email set" }}</p>
         </div>
+        
         <form method="post" enctype="multipart/form-data" style="margin-top: 22px; text-align:left;">
             {% csrf_token %}
             <div class="form-group" style="margin-bottom: 14px; text-align:left;">
@@ -34,13 +31,7 @@
             </div>
             <button type="submit" class="btn btn-primary" style="width:100%;">Save Picture</button>
         </form>
-=======
-            <img src="https://ui-avatars.com/api/?name={{ user.username }}&background=eb3636&color=fff&size=120"
-                 alt="Avatar">
-            <h2>{{ user.username }}</h2>
-            <p>{{ user.email|default:"No email set" }}</p>
-        </div>
->>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
+
         <div style="margin-top: 24px; text-align:left;">
             <div class="info-row">
                 <span>Member Since</span>
@@ -53,7 +44,6 @@
         </div>
     </div>
 
-    <!-- Right: Stats -->
     <div style="display: flex; flex-direction: column; gap: 22px;">
         <div class="card">
             <h3 style="margin-bottom: 20px;">📊 Study Stats</h3>
