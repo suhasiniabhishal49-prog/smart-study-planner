@@ -121,12 +121,11 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-<<<<<<< HEAD
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-=======
->>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
+
 LOGIN_REDIRECT_URL = 'planner:dashboard'
 LOGIN_URL = 'planner:login'
 LOGOUT_REDIRECT_URL = 'planner:login'
