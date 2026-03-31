@@ -13,7 +13,7 @@ class Subject(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='subjects')
     name = models.CharField(max_length=100)
     priority = models.CharField(max_length=10, choices=PRIORITY_CHOICES, default='Medium')
-    color = models.CharField(max_length=7, default='#3b82f6')  # hex color
+    color = models.CharField(max_length=7, default='#3b82f6')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -34,18 +34,16 @@ class Task(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Pending')
     estimated_time = models.IntegerField(default=30, help_text='Estimated time in minutes')
     created_at = models.DateTimeField(auto_now_add=True)
-<<<<<<< HEAD
+
+    # ✅ Keep these (advanced feature)
     reminder_time = models.DateTimeField(blank=True, null=True, help_text='Optional reminder time')
     reminder_sent = models.BooleanField(default=False)
-=======
->>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
 
     def __str__(self):
         return self.title
 
     @property
     def is_overdue(self):
-        """Returns True if task is still pending but deadline has passed."""
         return self.status == 'Pending' and self.deadline < timezone.now()
 
 
@@ -58,7 +56,6 @@ class StudySchedule(models.Model):
 
     def __str__(self):
         return f"{self.task.title} on {self.date}"
-<<<<<<< HEAD
 
 
 class Profile(models.Model):
@@ -72,5 +69,3 @@ class Profile(models.Model):
     @property
     def avatar_url(self):
         return self.avatar.url if self.avatar else None
-=======
->>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
