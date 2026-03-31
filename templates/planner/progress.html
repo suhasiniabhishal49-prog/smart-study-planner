@@ -1,15 +1,12 @@
 {% extends 'planner/base.html' %}
-<<<<<<< HEAD
+
 {% block title %}Analytics - PeakPrep{% endblock %}
-=======
-{% block title %}Analytics - PW Study{% endblock %}
->>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
+
 {% block header_title %}Analytics 📊{% endblock %}
 {% block header_subtitle %}Track your study progress.{% endblock %}
 
 {% block content %}
 
-<!-- Overall Stats -->
 <div class="stats-row" style="margin-bottom:24px;">
     <div class="stat-box">
         <h4>Total</h4>
@@ -31,7 +28,6 @@
 
 <div style="display:grid; grid-template-columns: 240px 1fr; gap:22px; align-items:start;">
 
-    <!-- Progress Circle -->
     <div class="card" style="text-align:center;">
         <h3 style="margin-bottom:14px;">Overall</h3>
         <div class="progress-circle" data-progress="{{ progress_pct }}">
@@ -47,7 +43,6 @@
         <p style="margin-top:14px; color:var(--text-muted); font-size:14px;">{{ completed }} of {{ total }} tasks</p>
     </div>
 
-    <!-- Subject Breakdown -->
     <div class="card">
         <h3 style="margin-bottom:22px;">Progress by Subject</h3>
         {% if subject_stats %}
