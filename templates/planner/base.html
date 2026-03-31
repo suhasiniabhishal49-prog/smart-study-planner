@@ -4,11 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>{% block title %}PeakPrep{% endblock %}</title>
-=======
-    <title>{% block title %}PW Smart Study{% endblock %}</title>
->>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}?v=1.1">
     <style>
@@ -35,21 +31,11 @@
 <body>
 <div class="app-container">
 
-    <!-- ===== SIDEBAR ===== -->
     <aside class="sidebar">
-<<<<<<< HEAD
         <a href="#" id="logoRefresh" class="logo logo-refresh" title="Refresh page">
-            <!-- Lightning bolt logo -->
             <svg width="26" height="26" viewBox="0 0 24 24" fill="#eb3636"><path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z"/></svg>
             <h2>PeakPrep</h2>
         </a>
-=======
-        <div class="logo">
-            <!-- Lightning bolt logo -->
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="#eb3636"><path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z"/></svg>
-            <h2>PW Study</h2>
-        </div>
->>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
 
         <nav class="menu">
             <a href="{% url 'planner:dashboard' %}" class="menu-item {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}">
@@ -82,7 +68,6 @@
             </a>
         </nav>
 
-        <!-- Logout at the bottom -->
         <form action="{% url 'planner:logout' %}" method="post" style="margin-top: auto; padding-top: 20px;">
             {% csrf_token %}
             <button type="submit" class="menu-item logout-btn">
@@ -92,7 +77,6 @@
         </form>
     </aside>
 
-    <!-- ===== MAIN CONTENT ===== -->
     <main class="main-content">
         <header>
             <div class="greeting">
@@ -100,13 +84,11 @@
                 <p>{% block header_subtitle %}Let's make today productive.{% endblock %}</p>
             </div>
             <div class="header-actions">
-                <!-- Dark mode toggle -->
                 <button class="icon-btn" id="darkModeBtn" onclick="toggleDarkMode()" title="Toggle dark mode">
                     <span id="darkModeIcon">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
                     </span>
                 </button>
-                <!-- Profile avatar -->
                 <a href="{% url 'planner:profile' %}" class="profile-pic" title="Profile">
                     <img src="https://ui-avatars.com/api/?name={{ request.user.username }}&background=eb3636&color=fff" alt="Profile">
                 </a>
@@ -127,11 +109,9 @@
     </main>
 </div>
 
+<div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
 <script src="{% static 'js/script.js' %}"></script>
 {% block extra_js %}{% endblock %}
-<<<<<<< HEAD
-        <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
-=======
 </body>
->>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
 </html>
