@@ -1,9 +1,7 @@
 {% extends 'planner/base.html' %}
-<<<<<<< HEAD
+
 {% block title %}{% if editing %}Edit Task{% else %}Add Task{% endif %} - PeakPrep{% endblock %}
-=======
-{% block title %}{% if editing %}Edit Task{% else %}Add Task{% endif %} - PW Study{% endblock %}
->>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
+
 {% block header_title %}{% if editing %}Edit Task ✏️{% else %}Add Task ➕{% endif %}{% endblock %}
 {% block header_subtitle %}{% if editing %}Update the task details.{% else %}Create a new study task.{% endif %}{% endblock %}
 
@@ -30,7 +28,7 @@
             <label>Subject</label>
             {{ form.subject }}
             {% if form.subject.errors %}<p class="error-text">{{ form.subject.errors.0 }}</p>{% endif %}
-<<<<<<< HEAD
+            
             <p style="color:var(--text-muted); font-size:13px; margin-top:10px;">
                 Need a new subject? <a href="{% url 'planner:add_subject' %}">Add a subject</a> to assign it to this task.
             </p>
@@ -39,8 +37,6 @@
                     You need to add at least one subject before saving a task.
                 </p>
             {% endif %}
-=======
->>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
         </div>
 
         <div class="form-group">
@@ -50,15 +46,12 @@
         </div>
 
         <div class="form-group">
-<<<<<<< HEAD
             <label>Reminder Time (optional)</label>
             {{ form.reminder_time }}
             {% if form.reminder_time.errors %}<p class="error-text">{{ form.reminder_time.errors.0 }}</p>{% endif %}
         </div>
 
         <div class="form-group">
-=======
->>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
             <label>Estimated Study Time (minutes)</label>
             {{ form.estimated_time }}
         </div>
