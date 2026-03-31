@@ -10,6 +10,26 @@ function toggleDarkMode() {
     }
 }
 
+function showToast(message, type = 'info') {
+    const container = document.getElementById('toastContainer');
+    if (!container) return;
+
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    toast.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(14px)';
+    }, 5000);
+
+    setTimeout(() => {
+        toast.remove();
+    }, 5400);
+}
+
 // ===== On page load: restore dark mode preference =====
 document.addEventListener('DOMContentLoaded', () => {
     const pref = localStorage.getItem('darkMode');

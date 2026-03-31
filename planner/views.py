@@ -94,6 +94,7 @@ def dashboard(request):
         "Task complete? Cute. You’re unstoppable."
     ]
     reminder_notifications = []
+    pending_count = pending_tasks_qs.count()
 
     if due_reminders.exists():
         for task in due_reminders:
@@ -108,7 +109,6 @@ def dashboard(request):
             task.reminder_sent = True
             task.save(update_fields=['reminder_sent'])
     else:
-        pending_count = pending_tasks_qs.count()
         if pending_count > 0:
             quote = random.choice(motivational_quotes)
             reminder_notifications.append({
