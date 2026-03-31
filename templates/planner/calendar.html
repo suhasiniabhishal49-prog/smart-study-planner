@@ -1,15 +1,12 @@
 {% extends 'planner/base.html' %}
-<<<<<<< HEAD
+
 {% block title %}Calendar - PeakPrep{% endblock %}
-=======
-{% block title %}Calendar - PW Study{% endblock %}
->>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
+
 {% block header_title %}Calendar View 🗓️{% endblock %}
 {% block header_subtitle %}Browse tasks by time period.{% endblock %}
 
 {% block content %}
 
-<!-- Sort tabs -->
 <div style="display:flex; gap:12px; margin-bottom:22px;">
     <a href="?sort=today"
        class="btn {% if sort_by == 'today' %}btn-primary{% else %}btn-secondary{% endif %}">
