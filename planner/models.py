@@ -34,8 +34,11 @@ class Task(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Pending')
     estimated_time = models.IntegerField(default=30, help_text='Estimated time in minutes')
     created_at = models.DateTimeField(auto_now_add=True)
+<<<<<<< HEAD
     reminder_time = models.DateTimeField(blank=True, null=True, help_text='Optional reminder time')
     reminder_sent = models.BooleanField(default=False)
+=======
+>>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
 
     def __str__(self):
         return self.title
@@ -55,6 +58,7 @@ class StudySchedule(models.Model):
 
     def __str__(self):
         return f"{self.task.title} on {self.date}"
+<<<<<<< HEAD
 
 
 class Profile(models.Model):
@@ -68,3 +72,5 @@ class Profile(models.Model):
     @property
     def avatar_url(self):
         return self.avatar.url if self.avatar else None
+=======
+>>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d

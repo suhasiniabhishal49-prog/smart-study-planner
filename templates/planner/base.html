@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>{% block title %}PeakPrep{% endblock %}</title>
+=======
+    <title>{% block title %}PW Smart Study{% endblock %}</title>
+>>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}?v=1.1">
     <style>
@@ -33,11 +37,19 @@
 
     <!-- ===== SIDEBAR ===== -->
     <aside class="sidebar">
+<<<<<<< HEAD
         <a href="#" id="logoRefresh" class="logo logo-refresh" title="Refresh page">
             <!-- Lightning bolt logo -->
             <svg width="26" height="26" viewBox="0 0 24 24" fill="#eb3636"><path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z"/></svg>
             <h2>PeakPrep</h2>
         </a>
+=======
+        <div class="logo">
+            <!-- Lightning bolt logo -->
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#eb3636"><path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z"/></svg>
+            <h2>PW Study</h2>
+        </div>
+>>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
 
         <nav class="menu">
             <a href="{% url 'planner:dashboard' %}" class="menu-item {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}">
@@ -117,5 +129,9 @@
 
 <script src="{% static 'js/script.js' %}"></script>
 {% block extra_js %}{% endblock %}
+<<<<<<< HEAD
         <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+=======
+</body>
+>>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
 </html>

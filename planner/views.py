@@ -5,10 +5,16 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.utils import timezone
 from datetime import timedelta
 from django.db.models import Case, When, Value, IntegerField
+<<<<<<< HEAD
 import random
 
 from .models import Subject, Task, Profile
 from .forms import UserRegistrationForm, SubjectForm, TaskForm, ProfileForm
+=======
+
+from .models import Subject, Task
+from .forms import UserRegistrationForm, SubjectForm, TaskForm
+>>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
 
 
 # =============================================================================
@@ -75,6 +81,7 @@ def dashboard(request):
     today_tasks = pending_tasks_qs.filter(deadline__date=today)
     upcoming_tasks = pending_tasks_qs.filter(deadline__gte=timezone.now()).order_by('deadline')[:5]
 
+<<<<<<< HEAD
     due_reminders = Task.objects.filter(
         user=request.user,
         reminder_time__lte=timezone.now(),
@@ -119,6 +126,8 @@ def dashboard(request):
             reminder_notifications.append({
                 'text': f"Completed! Based on what you've completed so far, you have finished {completed_tasks} task{'s' if completed_tasks != 1 else ''}. {quote}"
             })
+=======
+>>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
     context = {
         'total_tasks': all_tasks.count(),
         'completed_tasks': completed_tasks,
@@ -126,7 +135,10 @@ def dashboard(request):
         'overdue_tasks': overdue_tasks,
         'today_tasks': today_tasks,
         'upcoming_tasks': upcoming_tasks,
+<<<<<<< HEAD
         'reminder_notifications': reminder_notifications,
+=======
+>>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
     }
     return render(request, 'planner/dashboard.html', context)
 
@@ -141,6 +153,7 @@ def profile(request):
     total_tasks = Task.objects.filter(user=request.user).count()
     completed = Task.objects.filter(user=request.user, status='Completed').count()
     subjects_count = Subject.objects.filter(user=request.user).count()
+<<<<<<< HEAD
     profile, _ = Profile.objects.get_or_create(user=request.user)
 
     if request.method == 'POST':
@@ -151,13 +164,18 @@ def profile(request):
     else:
         form = ProfileForm(instance=profile)
 
+=======
+>>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
     context = {
         'total_tasks': total_tasks,
         'completed': completed,
         'pending': total_tasks - completed,
         'subjects_count': subjects_count,
+<<<<<<< HEAD
         'profile_form': form,
         'profile': profile,
+=======
+>>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
     }
     return render(request, 'planner/profile.html', context)
 
@@ -238,11 +256,15 @@ def add_task(request):
             return redirect('planner:tasks')
     else:
         form = TaskForm(user=request.user)
+<<<<<<< HEAD
     subjects_exist = Subject.objects.filter(user=request.user).exists()
     return render(request, 'planner/add_task.html', {
         'form': form,
         'subjects_exist': subjects_exist,
     })
+=======
+    return render(request, 'planner/add_task.html', {'form': form})
+>>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
 
 
 @login_required
@@ -256,12 +278,16 @@ def edit_task(request, task_id):
             return redirect('planner:tasks')
     else:
         form = TaskForm(instance=task, user=request.user)
+<<<<<<< HEAD
     return render(request, 'planner/add_task.html', {
         'form': form,
         'editing': True,
         'task': task,
         'subjects_exist': True,
     })
+=======
+    return render(request, 'planner/add_task.html', {'form': form, 'editing': True, 'task': task})
+>>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
 
 
 @login_required

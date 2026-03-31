@@ -1,5 +1,9 @@
 {% extends 'planner/base.html' %}
+<<<<<<< HEAD
 {% block title %}Profile - PeakPrep{% endblock %}
+=======
+{% block title %}Profile - PW Study{% endblock %}
+>>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
 {% block header_title %}My Profile{% endblock %}
 {% block header_subtitle %}Your account information and stats.{% endblock %}
 
@@ -9,6 +13,7 @@
     <!-- Left: Profile Card -->
     <div class="card" style="text-align:center;">
         <div class="profile-hero">
+<<<<<<< HEAD
             {% if profile.avatar %}
                 <img src="{{ profile.avatar.url }}" alt="Avatar">
             {% else %}
@@ -29,6 +34,13 @@
             </div>
             <button type="submit" class="btn btn-primary" style="width:100%;">Save Picture</button>
         </form>
+=======
+            <img src="https://ui-avatars.com/api/?name={{ user.username }}&background=eb3636&color=fff&size=120"
+                 alt="Avatar">
+            <h2>{{ user.username }}</h2>
+            <p>{{ user.email|default:"No email set" }}</p>
+        </div>
+>>>>>>> 3c621a99564f3dba48ef5ff875bc43d157a8466d
         <div style="margin-top: 24px; text-align:left;">
             <div class="info-row">
                 <span>Member Since</span>
